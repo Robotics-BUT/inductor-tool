@@ -48,6 +48,7 @@
 		<Unit filename="Makefile" />
 		<Unit filename="Makefile.include" />
 		<Unit filename="inc/leds.h" />
+		<Unit filename="inc/pwm.h" />
 		<Unit filename="inc/serial.h" />
 		<Unit filename="lib/libopencm3/include/libopencm3/cm3/assert.h" />
 		<Unit filename="lib/libopencm3/include/libopencm3/cm3/common.h" />
@@ -865,6 +866,9 @@
 		<Unit filename="lib/libopencm3/scripts/data/lpc43xx/ssp.yaml" />
 		<Unit filename="lib/libopencm3/scripts/data/lpc43xx/usb.yaml" />
 		<Unit filename="src/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pwm.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/serial.c">

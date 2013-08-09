@@ -27,6 +27,7 @@
 
 #include "leds.h"
 #include "serial.h"
+#include "pwm.h"
 
 static uint8_t rbuf[1024];
 static uint8_t tbuf[1024];
@@ -36,6 +37,7 @@ int main(void)
     rcc_clock_setup_hse_3v3(&hse_8mhz_3v3[CLOCK_3V3_168MHZ]);
 
     leds_init();
+    pwm_init();
 
 	FILE* us2 = fopenserial(1, 115200, tbuf,1024,rbuf,1024);
 
