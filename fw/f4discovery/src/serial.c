@@ -166,6 +166,8 @@ static int _ioclose(void *_cookie)
     return EINVAL;
 }
 
+void usa_rxb(uint8_t ch);
+
 static void _isru(uart_device_t *dev)
 {
     uint8_t ch;
@@ -181,12 +183,15 @@ static void _isru(uart_device_t *dev)
     if (usart_get_interrupt_source(dev->device,USART_SR_RXNE))
     {
         ch = (char)usart_recv(dev->device);
+
+        usa_rxb(ch);
+        /*
         if (!ringbuf_write_byte(&dev->rx_ring, ch))
         {
             // data overrun occurs, current char will not be added
             dev->stats_rxoverruns++;
         }
-
+        */
         /*if (proto_rx64_extract(&dev->rx_ring) == PROTO_NOTMY)
             ringbuf_skip(&dev->rx_ring,1);*/
     }
