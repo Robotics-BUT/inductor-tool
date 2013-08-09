@@ -18,53 +18,34 @@
  * along with this library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <libopencm3/stm32/f4/rcc.h>
-#include <libopencm3/stm32/f4/gpio.h>
+#include <libopencm3/stm32/rcc.h>
+#include <libopencm3/stm32/gpio.h>
+#include <stdio.h>
+#include <errno.h>
+#include <stddef.h>
+#include <sys/types.h>
 
-static void gpio_setup(void)
-{
-	/* Enable GPIOD clock. */
-	/* Manually: */
-	// RCC_AHB1ENR |= RCC_AHB1ENR_IOPDEN;
-	/* Using API functions: */
-	rcc_peripheral_enable_clock(&RCC_AHB1ENR, RCC_AHB1ENR_IOPDEN);
+#include "leds.h"
+#include "serial.h"
 
-	/* Set GPIO12 (in GPIO port D) to 'output push-pull'. */
-	/* Manually: */
-	// GPIOD_CRH = (GPIO_CNF_OUTPUT_PUSHPULL << (((8 - 8) * 4) + 2));
-	// GPIOD_CRH |= (GPIO_MODE_OUTPUT_2_MHZ << ((8 - 8) * 4));
-	/* Using API functions: */
-	gpio_mode_setup(GPIOD, GPIO_MODE_OUTPUT, GPIO_PUPD_NONE, GPIO12);
-}
+static uint8_t rbuf[1024];
+static uint8_t tbuf[1024];
 
 int main(void)
 {
-	int i;
+    rcc_clock_setup_hse_3v3(&hse_8mhz_3v3[CLOCK_3V3_168MHZ]);
 
-	gpio_setup();
+    leds_init();
 
-	/* Blink the LED (PC8) on the board. */
+	FILE* us2 = fopenserial(1, 115200, tbuf,1024,rbuf,1024);
+
 	while (1) {
-		/* Manually: */
-		// GPIOD_BSRR = GPIO12;		/* LED off */
-		// for (i = 0; i < 1000000; i++)	/* Wait a bit. */
-		// 	__asm__("nop");
-		// GPIOD_BRR = GPIO12;		/* LED on */
-		// for (i = 0; i < 1000000; i++)	/* Wait a bit. */
-		// 	__asm__("nop");
+        fprintf(us2,"X");
 
-		/* Using API functions gpio_set()/gpio_clear(): */
-		// gpio_set(GPIOD, GPIO12);	/* LED off */
-		// for (i = 0; i < 1000000; i++)	/* Wait a bit. */
-		// 	__asm__("nop");
-		// gpio_clear(GPIOD, GPIO12);	/* LED on */
-		// for (i = 0; i < 1000000; i++)	/* Wait a bit. */
-		// 	__asm__("nop");
-
-		/* Using API function gpio_toggle(): */
-		gpio_toggle(GPIOD, GPIO12);	/* LED on/off */
-		for (i = 0; i < 1000000; i++)	/* Wait a bit. */
+		for (int i = 0; i < 10000000; i++)	/* Wait a bit. */
 			__asm__("nop");
+
+        LED_TGL(LED0);
 	}
 
 	return 0;

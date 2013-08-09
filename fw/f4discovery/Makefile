@@ -21,5 +21,16 @@ BINARY = project
 
 DEVICE = stm32f407vgt6
 
+#using newlib-nano
+CFLAGS += --specs=nano.specs
+LDFLAGS += --specs=nano.specs
+
+#compiling with standard C99 with GNU extensions
+CFLAGS += -std=gnu99
+
+CFLAGS += -I./inc
+
+SRCS += $(wildcard src/primitives/*.c)
+
 include Makefile.include
 

@@ -2,11 +2,19 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="perseus" />
+		<Option title="project" />
 		<Option makefile_is_custom="1" />
 		<Option pch_mode="2" />
 		<Option compiler="armelfgcc" />
 		<Option extended_obj_names="1" />
+		<MakeCommands>
+			<Build command="$make -j 5 -f $makefile images" />
+			<CompileFile command="$make -j 5 -f $makefile $file" />
+			<Clean command="$make -j 5 -f $makefile clean" />
+			<DistClean command="$make -f $makefile distclean$target" />
+			<AskRebuildNeeded command="$make -q -f $makefile images" />
+			<SilentBuild command="$make -j 5 -f $makefile images &gt; $(CMD_NULL)" />
+		</MakeCommands>
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/$(PROJECT_NAME).elf" prefix_auto="0" extension_auto="0" />
@@ -37,6 +45,10 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="Makefile" />
+		<Unit filename="Makefile.include" />
+		<Unit filename="inc/leds.h" />
+		<Unit filename="inc/serial.h" />
 		<Unit filename="lib/libopencm3/include/libopencm3/cm3/assert.h" />
 		<Unit filename="lib/libopencm3/include/libopencm3/cm3/common.h" />
 		<Unit filename="lib/libopencm3/include/libopencm3/cm3/cortex.h" />
@@ -855,12 +867,15 @@
 		<Unit filename="src/main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/serial.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />
 			<debugger>
 				<remote_debugging target="Debug">
-					<options conn_type="2" serial_port="COM3" serial_baud="115200" ip_address="localhost" ip_port="3333" additional_cmds="monitor swdp_scan&#x0A;attach 1&#x0A;load&#x0A;b main&#x0A;run" extended_remote="1" />
+					<options conn_type="2" serial_port="COM3" serial_baud="115200" ip_address="localhost" ip_port="3333" additional_cmds="monitor connect_srst enable&#x0A;monitor swdp_scan&#x0A;attach 1&#x0A;load&#x0A;b main&#x0A;run" extended_remote="1" />
 				</remote_debugging>
 				<remote_debugging target="Release">
 					<options conn_type="2" serial_port="COM3" serial_baud="115200" ip_address="localhost" ip_port="3333" additional_cmds="monitor swdp_scan&#x0A;attach 1&#x0A;load&#x0A;run" extended_remote="1" />

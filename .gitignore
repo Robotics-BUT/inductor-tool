@@ -1,0 +1,15 @@
+/fw/f4discovery/bin/*.bin
+
+/fw/f4discovery/bin/*.elf
+
+/fw/f4discovery/bin/*.hex
+
+/fw/f4discovery/bin/*.list
+
+/fw/f4discovery/bin/*.srec
+
+*.cbTemp
+
+*.d
+*.o
+/fw/f4discovery/*.ld

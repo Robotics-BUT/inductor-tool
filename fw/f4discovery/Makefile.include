@@ -49,7 +49,7 @@ endif
 
 
 FP_FLAGS	?= -mfloat-abi=hard -mfpu=fpv4-sp-d16
-ARCH_FLAGS	?= -mcpu=cortex-m4 -mthumb 
+ARCH_FLAGS	?= -mcpu=cortex-m4 -mthumb
 
 CFLAGS		+= -Os -g \
 		   -Wall -Wextra -Wimplicit-function-declaration \
@@ -94,30 +94,30 @@ flash: $(BINARY).flash
 gdb: $(BINARY).gdb
 
 %.images: %.bin %.hex %.srec %.list
-	@#printf "*** $* images generated ***\n"
+	@printf "*** $* images generated ***\n"
 
 %.bin: %.elf
-	@#printf "  OBJCOPY $(*).bin\n"
+	@printf "  OBJCOPY $(*).bin\n"
 	$(Q)$(OBJCOPY) -Obinary $(*).elf $(*).bin
 
 %.hex: %.elf
-	@#printf "  OBJCOPY $(*).hex\n"
+	@printf "  OBJCOPY $(*).hex\n"
 	$(Q)$(OBJCOPY) -Oihex $(*).elf $(*).hex
 
 %.srec: %.elf
-	@#printf "  OBJCOPY $(*).srec\n"
+	@printf "  OBJCOPY $(*).srec\n"
 	$(Q)$(OBJCOPY) -Osrec $(*).elf $(*).srec
 
 %.list: %.elf
-	@#printf "  OBJDUMP $(*).list\n"
+	@printf "  OBJDUMP $(*).list\n"
 	$(Q)$(OBJDUMP) -S $(*).elf > $(*).list
 
 bin/%.elf: $(OBJS) $(LDSCRIPT) $(SRCLIBDIR)/lib/libopencm3_stm32f4.a
-	@#printf "  LD      $(subst $(shell pwd)/,,$(@))\n"
+	@printf "  LD      $(subst $(shell pwd)/,,$(@))\n"
 	$(Q)$(LD) -o bin/$(*).elf $(OBJS) -lopencm3_stm32f4 $(LDFLAGS)
 
 %.o: %.c Makefile
-	@#printf "  CC      $(subst $(shell pwd)/,,$(@))\n"
+	@printf "  CC      $(subst $(shell pwd)/,,$(@))\n"
 	$(Q)$(CC) $(CFLAGS) -o $@ -c $<
 
 clean:
