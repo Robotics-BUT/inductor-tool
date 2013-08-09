@@ -1,0 +1,3 @@
+[submodule "fw/f4discovery/lib/libopencm3"]
+	path = fw/f4discovery/lib/libopencm3
+	url = https://github.com/BuFran/libopencm3
