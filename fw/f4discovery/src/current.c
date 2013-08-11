@@ -37,8 +37,8 @@ void current_init(void)
     adc_set_right_aligned(ADC2);
     adc_set_right_aligned(ADC3);
 
-	adc_set_sample_time_on_all_channels(ADC1, ADC_SMPR_SMP_15CYC);
-	adc_set_sample_time_on_all_channels(ADC2, ADC_SMPR_SMP_15CYC);
+	adc_set_sample_time_on_all_channels(ADC1, ADC_SMPR_SMP_3CYC);
+	adc_set_sample_time_on_all_channels(ADC2, ADC_SMPR_SMP_3CYC);
 	adc_set_sample_time_on_all_channels(ADC3, ADC_SMPR_SMP_15CYC);
 
 	adc_set_resolution(ADC1, ADC_CR1_RES_12BIT);

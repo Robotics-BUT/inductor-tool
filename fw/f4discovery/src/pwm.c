@@ -5,7 +5,7 @@
 
 #include "pwm.h"
 
-uint32_t pwm[4] = { 0x3FF, 0x3FF, 0x7FF, 1};
+uint32_t pwm[4] = { 0x4FF, 0x2FF, 0x7FF, 1};
 
 void pwm_init(void)
 {

@@ -1,34 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="Makefile.include" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="lib\libopencm3\include\libopencm3\stm32\f4\adc.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2903" topLine="142" />
+			<Cursor1 position="17543" topLine="484" />
 		</Cursor>
 	</File>
-	<File name="lib\libopencm3\include\libopencmsis\stm32\f1\irqhandlers.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\main.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2281" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="lib\libopencm3\include\libopencm3\stm32\common\timer_common_f24.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="177" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\pwm.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2635" topLine="62" />
-		</Cursor>
-	</File>
-	<File name="lib\libopencm3\lib\stm32\f4\vector_nvic.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="7097" topLine="150" />
-		</Cursor>
-	</File>
-	<File name="inc\leds.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="351" topLine="0" />
+			<Cursor1 position="1027" topLine="26" />
 		</Cursor>
 	</File>
 	<File name="lib\libopencm3\lib\stm32\common\gpio_common_f0234.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -36,24 +16,44 @@
 			<Cursor1 position="3850" topLine="68" />
 		</Cursor>
 	</File>
-	<File name="inc\serial.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="75" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\serial.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5343" topLine="162" />
-		</Cursor>
-	</File>
 	<File name="lib\libopencm3\include\libopencm3\stm32\f4\timer.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="991" topLine="4" />
 		</Cursor>
 	</File>
+	<File name="lib\libopencm3\lib\cm3\vector.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2174" topLine="31" />
+		</Cursor>
+	</File>
+	<File name="Makefile.include" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2903" topLine="142" />
+		</Cursor>
+	</File>
+	<File name="src\pwm.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2635" topLine="62" />
+		</Cursor>
+	</File>
+	<File name="lib\libopencm3\include\libopencm3\stm32\common\timer_common_all.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="16459" topLine="475" />
+		</Cursor>
+	</File>
+	<File name="lib\libopencm3\include\libopencmsis\stm32\f1\irqhandlers.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2281" topLine="0" />
+		</Cursor>
+	</File>
 	<File name="lib\libopencm3\lib\stm32\common\rcc_common_all.c" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="4577" topLine="82" />
+		</Cursor>
+	</File>
+	<File name="inc\serial.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="75" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="lib\libopencm3\lib\stm32\common\timer_common_all.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -66,14 +66,19 @@
 			<Cursor1 position="4336" topLine="95" />
 		</Cursor>
 	</File>
-	<File name="lib\libopencm3\lib\stm32\f4\rcc.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="lib\libopencm3\lib\stm32\f4\vector_nvic.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="11308" topLine="479" />
+			<Cursor1 position="7097" topLine="150" />
 		</Cursor>
 	</File>
-	<File name="lib\libopencm3\lib\cm3\vector.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\serial.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2174" topLine="31" />
+			<Cursor1 position="5343" topLine="162" />
+		</Cursor>
+	</File>
+	<File name="lib\libopencm3\include\libopencm3\stm32\common\timer_common_f24.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="177" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="src\current.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -81,14 +86,14 @@
 			<Cursor1 position="3211" topLine="72" />
 		</Cursor>
 	</File>
-	<File name="lib\libopencm3\include\libopencm3\stm32\common\timer_common_all.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="inc\leds.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="16459" topLine="475" />
+			<Cursor1 position="351" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\main.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="lib\libopencm3\lib\stm32\f4\rcc.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1027" topLine="26" />
+			<Cursor1 position="11308" topLine="479" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
