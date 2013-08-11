@@ -13,3 +13,8 @@
 *.d
 *.o
 /fw/f4discovery/*.ld
+
+/sw/InductorTester/bin/Debug
+
+/sw/InductorTester/obj/Debug
+/sw/InductorTester/*.suo
