@@ -46,11 +46,12 @@
 			</Target>
 		</Build>
 		<Unit filename="Makefile" />
-		<Unit filename="Makefile.include" />
-		<Unit filename="inc/current.h" />
-		<Unit filename="inc/leds.h" />
-		<Unit filename="inc/pwm.h" />
-		<Unit filename="inc/serial.h" />
+		<Unit filename="include/current.h" />
+		<Unit filename="include/leds.h" />
+		<Unit filename="include/primitives/llist.h" />
+		<Unit filename="include/primitives/ringbuf.h" />
+		<Unit filename="include/pwm.h" />
+		<Unit filename="include/serial.h" />
 		<Unit filename="lib/libopencm3/include/libopencm3/cm3/assert.h" />
 		<Unit filename="lib/libopencm3/include/libopencm3/cm3/common.h" />
 		<Unit filename="lib/libopencm3/include/libopencm3/cm3/cortex.h" />
@@ -866,10 +867,22 @@
 		<Unit filename="lib/libopencm3/scripts/data/lpc43xx/sgpio.yaml" />
 		<Unit filename="lib/libopencm3/scripts/data/lpc43xx/ssp.yaml" />
 		<Unit filename="lib/libopencm3/scripts/data/lpc43xx/usb.yaml" />
+		<Unit filename="mk/common.mk" />
+		<Unit filename="mk/libopencm3-config.mk" />
+		<Unit filename="mk/libopencm3-rules.mk" />
 		<Unit filename="src/current.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/leds.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/primitives/llist.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/primitives/ringbuf.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/pwm.c">

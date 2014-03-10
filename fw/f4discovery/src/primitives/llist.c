@@ -18,7 +18,7 @@
 
 struct llist *llist_insert_new(struct llist *parent, uint8_t *buffer, size_t bufsize)
 {
-    struct llist *ll = (struct llist *)buffer;
+    struct llist *ll = (struct llist *)(void*)buffer;
     ll->bufsiz = bufsize - sizeof(struct llist);
     ll->buf = buffer + sizeof(struct llist);
     ll->flags = 0;
