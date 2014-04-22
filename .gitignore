@@ -19,3 +19,6 @@
 /sw/InductorTester/obj/Debug
 /sw/InductorTester/*.suo
 /fw/f4discovery/bin/*.map
+/sw/InductorTester/bin
+/sw/InductorTester/TestResults
+/sw/InductorTester/obj
