@@ -87,16 +87,11 @@ namespace tester
                     pomocnik = (ReadU16(port.BaseStream) - adc3_offset) / adc3_gain / adc5[id];    //druhy proud
                     if (adc2[id] < pomocnik)                                                        //porovnani proudu
                         adc2[id] = pomocnik;
+
+                    adc3[id] = adc2[id] / resistance;                     //vypocita proud
                 }
                 else
                     port.DiscardInBuffer();
-            }
-
-            for (int i = 0; i < 0xFFF; i++)
-            {
-                adc3[i] = adc2[i] / resistance;                     //vypocita proud
-                if (i > 1)
-                    adc4[i - 2] = adc1[i - 1] * (adc3[i] - adc3[i - 2]) / (2 * time_scale);       //vypocita indukcnost
             }
         }
 
@@ -163,6 +158,11 @@ namespace tester
 
             chart1.Series[0].Points.Clear();
             chart1.Series[1].Points.Clear();
+
+            for (int i = 2; i < 0xFFF; i++)
+            {
+                adc4[i - 2] = adc1[i - 1] * (adc3[i] - adc3[i - 2]) / (2 * time_scale);       //vypocita indukcnost
+            }
 
             for (int i = 0; i < 0xFFD; i++)
             {
@@ -275,7 +275,16 @@ namespace tester
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            
+            if (checkBox1.Checked)
+            {
+                port.WriteLine("2");                            //posle prikaz ke zmene nastaveni a spusteni mereni
+                port.WriteLine(napajeci_napeti.ToString());     //odesle hodnotu napajeciho napeti
+                port.WriteLine(nasobitel.ToString());           //odesle nasobek kroku
+            }
+            else
+            {
+                port.WriteLine("1");                //posle prikaz pouze ke spusteni mereni
+            }
         }
 
         private void Nasobitel_changed(object sender, EventArgs e)
@@ -319,6 +328,13 @@ namespace tester
             {
                 e.Handled = true;
             }
+        }
+
+        private void SendSettingsPressed(object sender, EventArgs e)
+        {
+            port.WriteLine("0");                            //posle prikaz ke zmene nastaveni
+            port.WriteLine(napajeci_napeti.ToString());     //odesle hodnotu napajeciho napeti
+            port.WriteLine(nasobitel.ToString());           //odesle nasobek kroku
         }
     }
 }

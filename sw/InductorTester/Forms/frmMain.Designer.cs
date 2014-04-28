@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.port = new System.IO.Ports.SerialPort(this.components);
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.button1 = new System.Windows.Forms.Button();
@@ -63,6 +63,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -84,42 +86,42 @@
             this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea1.AxisX.Crossing = -1.7976931348623157E+308D;
-            chartArea1.AxisX.Interval = 1D;
-            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea1.AxisX.Maximum = 50D;
-            chartArea1.AxisX.Minimum = 0D;
-            chartArea1.AxisX.MinorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea1.AxisY.Interval = 0.1D;
-            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea1.AxisY.Maximum = 1D;
-            chartArea1.AxisY.Minimum = -1D;
-            chartArea1.CursorX.Interval = 0D;
-            chartArea1.CursorX.IsUserEnabled = true;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            chartArea3.AxisX.Crossing = -1.7976931348623157E+308D;
+            chartArea3.AxisX.Interval = 1D;
+            chartArea3.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea3.AxisX.Maximum = 50D;
+            chartArea3.AxisX.Minimum = 0D;
+            chartArea3.AxisX.MinorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea3.AxisY.Interval = 0.1D;
+            chartArea3.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea3.AxisY.Maximum = 1D;
+            chartArea3.AxisY.Minimum = -1D;
+            chartArea3.CursorX.Interval = 0D;
+            chartArea3.CursorX.IsUserEnabled = true;
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
             this.chart1.Cursor = System.Windows.Forms.Cursors.Cross;
-            legend1.Enabled = false;
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            legend3.Enabled = false;
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(0, 1);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
-            series1.Name = "ADC1";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Legend = "Legend1";
-            series2.Name = "ADC2";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.Enabled = false;
-            series3.Legend = "Legend1";
-            series3.Name = "ADC3";
-            this.chart1.Series.Add(series1);
-            this.chart1.Series.Add(series2);
-            this.chart1.Series.Add(series3);
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series7.Legend = "Legend1";
+            series7.Name = "ADC1";
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series8.Legend = "Legend1";
+            series8.Name = "ADC2";
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series9.Enabled = false;
+            series9.Legend = "Legend1";
+            series9.Name = "ADC3";
+            this.chart1.Series.Add(series7);
+            this.chart1.Series.Add(series8);
+            this.chart1.Series.Add(series9);
             this.chart1.Size = new System.Drawing.Size(718, 473);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -396,7 +398,7 @@
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(736, 259);
+            this.button3.Location = new System.Drawing.Point(736, 226);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(109, 23);
             this.button3.TabIndex = 13;
@@ -428,11 +430,36 @@
             0});
             this.numericUpDown2.ValueChanged += new System.EventHandler(this.Nasobitel_changed);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Location = new System.Drawing.Point(737, 263);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 15;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.Location = new System.Drawing.Point(761, 258);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(84, 23);
+            this.button4.TabIndex = 16;
+            this.button4.Text = "Send Settings";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.SendSettingsPressed);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(868, 515);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label11);
@@ -491,6 +518,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button button4;
     }
 }
 
