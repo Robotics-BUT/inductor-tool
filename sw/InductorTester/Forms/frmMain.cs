@@ -27,7 +27,7 @@ namespace tester
         UInt16 oldid = 0;
         UInt16 knee = 0;
         uint nasobitel = 1;
-        double napajeci_napeti = 10;
+        short napajeci_napeti = 10;
         bool curr_graph = true;
 
         double[] adc1 = new double[0x1000];     //pole pro hodnoty napeti   (volty)
@@ -89,6 +89,36 @@ namespace tester
                         adc2[id] = pomocnik;
 
                     adc3[id] = adc2[id] / resistance;                     //vypocita proud
+
+                    if(adc3[id] > 8)                                 //pokud proud prekroci maximalni hodnotu, pokusi se vypnout mereni
+                    {
+                        if (port.IsOpen)
+                        {
+                            byte[] smazme = BitConverter.GetBytes((short)3);                                // 3 znaci ukoncit mereni
+                            byte[] prikaz = new byte[2];
+                            System.Buffer.BlockCopy(smazme, 0, prikaz, 0, 2);
+
+                            port.Write(prikaz, 0, prikaz.Length); //posle 2 byty jako prikaz
+                        }
+                        else
+                            MessageBox.Show("Current exceeded allowed value! Unable to abort the measurement. Serial port is not open.");
+
+                        if (nasobitel != 1)
+                            MessageBox.Show("The characteristic seems to be too steep, You should try to decrease the Time Scale value.");
+                        else
+                            MessageBox.Show("The characteristic seems to be too steep, You should try to decrease the Power Supply Voltage value.");
+                    }
+
+                    if (id == 0xF00)
+                    {
+                        if ((adc3[0xF00] - adc3[0x000]) < 2 && (adc3[0xEFF] - adc3[0x010]) < 2)
+                        {
+                            if (napajeci_napeti < 15)
+                                MessageBox.Show("The characteristic seems to be incomplete, You should try to increase the Power Supply Voltage value.");
+                            else
+                                MessageBox.Show("The characteristic seems to be incomplete, You should try to increase the Time Scale value.");
+                        }
+                    }
                 }
                 else
                     port.DiscardInBuffer();
@@ -277,13 +307,34 @@ namespace tester
         {
             if (checkBox1.Checked)
             {
-                port.WriteLine("2");                            //posle prikaz ke zmene nastaveni a spusteni mereni
-                port.WriteLine(napajeci_napeti.ToString());     //odesle hodnotu napajeciho napeti
-                port.WriteLine(nasobitel.ToString());           //odesle nasobek kroku
+                byte[] smazme = BitConverter.GetBytes((short)2);                                // 2 znaci prepsat nastaveni a spustit mereni
+                byte[] prikaz = new byte[2];
+                System.Buffer.BlockCopy(smazme, 0, prikaz, 0, 2);
+                byte[] napeti = BitConverter.GetBytes(napajeci_napeti);
+                smazme = BitConverter.GetBytes((short)nasobitel);
+                byte[] nasob = new byte[2];
+                System.Buffer.BlockCopy(smazme, 0, nasob, 0, 2);
+
+                byte[] poslat = new byte[prikaz.Length + napeti.Length + nasob.Length];
+                System.Buffer.BlockCopy(prikaz, 0, poslat, 0, prikaz.Length);
+                System.Buffer.BlockCopy(napeti, 0, poslat, prikaz.Length, napeti.Length);
+                System.Buffer.BlockCopy(nasob, 0, poslat, prikaz.Length + napeti.Length, nasob.Length);
+
+                if (port.IsOpen)
+                    port.Write(poslat, 0, poslat.Length); //posle 2 byty jako prikaz, 4 byty jako napajeci napeti, 2 byty jako nasobitel periody vzorkovani
+                else
+                    MessageBox.Show("Unable to send data. Serial port is not open.");
             }
             else
             {
-                port.WriteLine("1");                //posle prikaz pouze ke spusteni mereni
+                byte[] smazme = BitConverter.GetBytes((short)1);                                // 1 znaci pouze spustit mereni
+                byte[] prikaz = new byte[2];
+                System.Buffer.BlockCopy(smazme, 0, prikaz, 0, 2);
+
+                if (port.IsOpen)
+                    port.Write(prikaz, 0, prikaz.Length); //posle 2 byty jako prikaz
+                else
+                    MessageBox.Show("Unable to send data. Serial port is not open.");
             }
         }
 
@@ -301,22 +352,6 @@ namespace tester
             nasobitel = (uint)this.numericUpDown2.Value;
         }
 
-        private void Voltage_Changed(object sender, EventArgs e)
-        {
-            double result = 0;
-            double.TryParse(this.TextBoxVoltage.Text, out result);
-
-            if (result != 0)
-            {
-                napajeci_napeti = result;
-            }
-            else
-            {
-                string support_string = this.TextBoxVoltage.Text;
-                napajeci_napeti = double.Parse(support_string.Replace('.', ','));
-            }
-        }
-
         private void Voltage_KeyPressed(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
@@ -332,9 +367,37 @@ namespace tester
 
         private void SendSettingsPressed(object sender, EventArgs e)
         {
-            port.WriteLine("0");                            //posle prikaz ke zmene nastaveni
-            port.WriteLine(napajeci_napeti.ToString());     //odesle hodnotu napajeciho napeti
-            port.WriteLine(nasobitel.ToString());           //odesle nasobek kroku
+            byte[] smazme = BitConverter.GetBytes((short)0);                                // 0 znaci pouze prepsat nastaveni
+            byte[] prikaz = new byte[2];
+            System.Buffer.BlockCopy(smazme, 0, prikaz, 0, 2);
+            byte[] napeti = BitConverter.GetBytes(napajeci_napeti);
+            smazme = BitConverter.GetBytes((short)nasobitel);
+            byte[] nasob = new byte[2];
+            System.Buffer.BlockCopy(smazme, 0, nasob, 0, 2);
+
+            byte[] poslat = new byte[prikaz.Length + napeti.Length + nasob.Length];
+            System.Buffer.BlockCopy(prikaz, 0, poslat, 0, prikaz.Length);
+            System.Buffer.BlockCopy(napeti, 0, poslat, prikaz.Length, napeti.Length);
+            System.Buffer.BlockCopy(nasob, 0, poslat, prikaz.Length + napeti.Length, nasob.Length);
+
+            if(port.IsOpen)
+            port.Write(poslat, 0, poslat.Length); //posle 2 byty jako prikaz, 4 byty jako napajeci napeti, 2 byty jako nasobitel periody vzorkovani
+            else
+            MessageBox.Show("Unable to send data. Serial port is not open.");
+        }
+
+        private void VoltageChanged(object sender, EventArgs e)
+        {
+            if (this.numericUpDown3.Value > 15)
+            {
+                this.numericUpDown3.Value = 15;
+            }
+            else if (this.numericUpDown3.Value < 2)
+            {
+                this.numericUpDown3.Value = 2;
+            }
+
+            napajeci_napeti = (short)this.numericUpDown3.Value;
         }
     }
 }

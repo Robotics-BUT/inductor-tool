@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.port = new System.IO.Ports.SerialPort(this.components);
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.button1 = new System.Windows.Forms.Button();
@@ -58,18 +58,19 @@
             this.LabelKolenoL = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.TextBoxVoltage = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             this.SuspendLayout();
             // 
             // port
@@ -86,42 +87,42 @@
             this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea3.AxisX.Crossing = -1.7976931348623157E+308D;
-            chartArea3.AxisX.Interval = 1D;
-            chartArea3.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea3.AxisX.Maximum = 50D;
-            chartArea3.AxisX.Minimum = 0D;
-            chartArea3.AxisX.MinorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea3.AxisY.Interval = 0.1D;
-            chartArea3.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea3.AxisY.Maximum = 1D;
-            chartArea3.AxisY.Minimum = -1D;
-            chartArea3.CursorX.Interval = 0D;
-            chartArea3.CursorX.IsUserEnabled = true;
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
+            chartArea2.AxisX.Crossing = -1.7976931348623157E+308D;
+            chartArea2.AxisX.Interval = 1D;
+            chartArea2.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea2.AxisX.Maximum = 50D;
+            chartArea2.AxisX.Minimum = 0D;
+            chartArea2.AxisX.MinorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea2.AxisY.Interval = 0.1D;
+            chartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea2.AxisY.Maximum = 1D;
+            chartArea2.AxisY.Minimum = -1D;
+            chartArea2.CursorX.Interval = 0D;
+            chartArea2.CursorX.IsUserEnabled = true;
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
             this.chart1.Cursor = System.Windows.Forms.Cursors.Cross;
-            legend3.Enabled = false;
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
+            legend2.Enabled = false;
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(0, 1);
             this.chart1.Name = "chart1";
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series7.Legend = "Legend1";
-            series7.Name = "ADC1";
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series8.Legend = "Legend1";
-            series8.Name = "ADC2";
-            series9.ChartArea = "ChartArea1";
-            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series9.Enabled = false;
-            series9.Legend = "Legend1";
-            series9.Name = "ADC3";
-            this.chart1.Series.Add(series7);
-            this.chart1.Series.Add(series8);
-            this.chart1.Series.Add(series9);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series4.Legend = "Legend1";
+            series4.Name = "ADC1";
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series5.Legend = "Legend1";
+            series5.Name = "ADC2";
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series6.Enabled = false;
+            series6.Legend = "Legend1";
+            series6.Name = "ADC3";
+            this.chart1.Series.Add(series4);
+            this.chart1.Series.Add(series5);
+            this.chart1.Series.Add(series6);
             this.chart1.Size = new System.Drawing.Size(718, 473);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -364,17 +365,6 @@
             this.label8.TabIndex = 9;
             this.label8.Text = "L";
             // 
-            // TextBoxVoltage
-            // 
-            this.TextBoxVoltage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBoxVoltage.Location = new System.Drawing.Point(736, 310);
-            this.TextBoxVoltage.Name = "TextBoxVoltage";
-            this.TextBoxVoltage.Size = new System.Drawing.Size(109, 20);
-            this.TextBoxVoltage.TabIndex = 10;
-            this.TextBoxVoltage.Text = "10";
-            this.TextBoxVoltage.TextChanged += new System.EventHandler(this.Voltage_Changed);
-            this.TextBoxVoltage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Voltage_KeyPressed);
-            // 
             // label10
             // 
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -453,18 +443,31 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.SendSettingsPressed);
             // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.Location = new System.Drawing.Point(737, 311);
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(108, 20);
+            this.numericUpDown3.TabIndex = 17;
+            this.numericUpDown3.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDown3.ValueChanged += new System.EventHandler(this.VoltageChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(868, 515);
+            this.Controls.Add(this.numericUpDown3);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.TextBoxVoltage);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.ComboPortBox);
@@ -482,6 +485,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -513,13 +517,13 @@
         private System.Windows.Forms.Label LabelKolenoL;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox TextBoxVoltage;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.NumericUpDown numericUpDown3;
     }
 }
 
