@@ -1,19 +1,93 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="src\usb_vilem.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="lib\libopencm3\include\libopencm3\stm32\f4\adc.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1166" topLine="27" />
+			<Cursor1 position="17543" topLine="484" />
 		</Cursor>
 	</File>
-	<File name="lib\libopencm3\lib\usb\usb.c" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\dac.c" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2838" topLine="97" />
+			<Cursor1 position="42" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="lib\libopencm3\lib\stm32\common\rcc_common_all.c" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Makefile" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4093" topLine="160" />
+			<Cursor1 position="3073" topLine="71" />
+		</Cursor>
+	</File>
+	<File name="lib\libopencm3\lib\stm32\f2\rcc.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1738" topLine="43" />
+		</Cursor>
+	</File>
+	<File name="lib\libopencm3\include\libopencm3\lm4f\systemcontrol.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="22320" topLine="537" />
+		</Cursor>
+	</File>
+	<File name="lib\libopencm3\include\libopencm3\stm32\f4\timer.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="991" topLine="4" />
+		</Cursor>
+	</File>
+	<File name="lib\libopencm3\lib\stm32\common\gpio_common_f0234.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3850" topLine="68" />
+		</Cursor>
+	</File>
+	<File name="lib\libopencm3\lib\usb\usb_standard.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="162" topLine="231" />
+		</Cursor>
+	</File>
+	<File name="lib\libopencm3\include\libopencm3\lpc43xx\adc.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1445" topLine="34" />
+		</Cursor>
+	</File>
+	<File name="src\primitives\llist.c" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1199" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\usb_vilem.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4452" topLine="166" />
+		</Cursor>
+		<Folding>
+			<Collapse line="15" />
+		</Folding>
+	</File>
+	<File name="lib\libopencm3\include\libopencm3\stm32\common\timer_common_all.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="16459" topLine="475" />
+		</Cursor>
+	</File>
+	<File name="src\serial.c" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="225" topLine="9" />
+		</Cursor>
+		<Folding>
+			<Collapse line="49" />
+			<Collapse line="69" />
+			<Collapse line="113" />
+			<Collapse line="121" />
+			<Collapse line="130" />
+			<Collapse line="155" />
+			<Collapse line="163" />
+			<Collapse line="171" />
+			<Collapse line="200" />
+		</Folding>
+	</File>
+	<File name="lib\libopencm3\include\libopencmsis\stm32\f1\irqhandlers.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2281" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="lib\libopencm3\lib\usb\usb.c" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3921" topLine="118" />
 		</Cursor>
 	</File>
 	<File name="lib\libopencm3\include\libopencm3\stm32\l1\rcc.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -21,42 +95,34 @@
 			<Cursor1 position="15156" topLine="436" />
 		</Cursor>
 	</File>
+	<File name="lib\libopencm3\lib\stm32\common\rcc_common_all.c" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4093" topLine="160" />
+		</Cursor>
+	</File>
 	<File name="lib\libopencm3\lib\usb\usb_private.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="158" topLine="138" />
 		</Cursor>
 	</File>
-	<File name="lib\libopencm3\lib\usb\usb_f107.c" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="lib\libopencm3\lib\usb\usb_f107.c" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3019" topLine="70" />
+			<Cursor1 position="2544" topLine="68" />
 		</Cursor>
 	</File>
-	<File name="lib\libopencm3\include\libopencmsis\stm32\f1\irqhandlers.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="lib\libopencm3\include\libopencm3\usb\cdc.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2281" topLine="0" />
+			<Cursor1 position="2242" topLine="66" />
 		</Cursor>
 	</File>
-	<File name="include\usb_vilem.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\current.c" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1128" topLine="36" />
-		</Cursor>
-		<Folding>
-			<Collapse line="15" />
-		</Folding>
-	</File>
-	<File name="src\current.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2254" topLine="22" />
+			<Cursor1 position="2224" topLine="52" />
 		</Cursor>
 	</File>
-	<File name="src\pwm.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\protokol.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="732" topLine="9" />
-		</Cursor>
-	</File>
-	<File name="lib\libopencm3\include\libopencm3\stm32\common\timer_common_f24.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="177" topLine="0" />
+			<Cursor1 position="399" topLine="9" />
 		</Cursor>
 	</File>
 	<File name="src\leds.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -64,34 +130,9 @@
 			<Cursor1 position="278" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="lib\libopencm3\lib\usb\usb_f103.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="lib\libopencm3\lib\cm3\vector.c" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="0" topLine="18" />
-		</Cursor>
-	</File>
-	<File name="lib\libopencm3\lib\cm3\vector.c" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2257" topLine="66" />
-		</Cursor>
-	</File>
-	<File name="mk\common.mk" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="556" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Makefile" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1429" topLine="15" />
-		</Cursor>
-	</File>
-	<File name="lib\libopencm3\include\libopencm3\stm32\otg_hs.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="374" />
-		</Cursor>
-	</File>
-	<File name="lib\libopencm3\lib\stm32\common\timer_common_all.c" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="47828" topLine="1544" />
+			<Cursor1 position="2173" topLine="66" />
 		</Cursor>
 	</File>
 	<File name="lib\libopencm3\include\libopencm3\dispatch\nvic.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -99,9 +140,47 @@
 			<Cursor1 position="340" topLine="0" />
 		</Cursor>
 	</File>
+	<File name="lib\libopencm3\lib\usb\usb_f103.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="18" />
+		</Cursor>
+	</File>
+	<File name="include\protokol.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="132" topLine="4" />
+		</Cursor>
+	</File>
+	<File name="include\leds.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="50" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\usb_vilem.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1385" topLine="37" />
+		</Cursor>
+		<Folding>
+			<Collapse line="60" />
+		</Folding>
+	</File>
+	<File name="lib\libopencm3\include\libopencm3\stm32\otg_hs.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="374" />
+		</Cursor>
+	</File>
+	<File name="mk\common.mk" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="556" topLine="0" />
+		</Cursor>
+	</File>
 	<File name="lib\libopencm3\include\libopencm3\stm32\usb_desc.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="455" topLine="77" />
+		</Cursor>
+	</File>
+	<File name="lib\libopencm3\lib\stm32\common\timer_common_all.c" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="47828" topLine="1544" />
 		</Cursor>
 	</File>
 	<File name="lib\libopencm3\lib\stm32\f4\vector_nvic.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -111,7 +190,7 @@
 	</File>
 	<File name="src\main.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2331" topLine="60" />
+			<Cursor1 position="3218" topLine="105" />
 		</Cursor>
 	</File>
 	<File name="lib\libopencm3\lib\stm32\f4\rcc.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -119,9 +198,9 @@
 			<Cursor1 position="11308" topLine="479" />
 		</Cursor>
 	</File>
-	<File name="lib\libopencm3\include\libopencm3\stm32\common\timer_common_all.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="lib\libopencm3\include\libopencm3\stm32\otg_fs.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="16459" topLine="475" />
+			<Cursor1 position="460" topLine="320" />
 		</Cursor>
 	</File>
 	<File name="lib\libopencm3\lib\stm32\common\usart_common_f124.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -129,39 +208,9 @@
 			<Cursor1 position="4336" topLine="95" />
 		</Cursor>
 	</File>
-	<File name="lib\libopencm3\include\libopencm3\lm4f\systemcontrol.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\pwm.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="22320" topLine="537" />
-		</Cursor>
-	</File>
-	<File name="src\serial.c" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5824" topLine="174" />
-		</Cursor>
-	</File>
-	<File name="include\leds.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="50" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="lib\libopencm3\include\libopencm3\stm32\otg_fs.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="460" topLine="320" />
-		</Cursor>
-	</File>
-	<File name="lib\libopencm3\lib\usb\usb_fx07_common.c" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="8823" topLine="296" />
-		</Cursor>
-	</File>
-	<File name="lib\libopencm3\lib\usb\usb_control.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="114" />
-		</Cursor>
-	</File>
-	<File name="src\dac.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="860" topLine="0" />
+			<Cursor1 position="164" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="lib\libopencm3\include\libopencm3\stm32\usb.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -169,39 +218,19 @@
 			<Cursor1 position="267" topLine="279" />
 		</Cursor>
 	</File>
-	<File name="lib\libopencm3\lib\stm32\f2\rcc.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="lib\libopencm3\lib\usb\usb_fx07_common.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1738" topLine="43" />
+			<Cursor1 position="6965" topLine="236" />
 		</Cursor>
 	</File>
-	<File name="lib\libopencm3\include\libopencm3\lpc43xx\adc.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="lib\libopencm3\lib\usb\usb_control.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1445" topLine="34" />
+			<Cursor1 position="7964" topLine="257" />
 		</Cursor>
 	</File>
-	<File name="lib\libopencm3\include\libopencm3\stm32\f4\adc.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="lib\libopencm3\include\libopencm3\stm32\common\timer_common_f24.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="17543" topLine="484" />
-		</Cursor>
-	</File>
-	<File name="lib\libopencm3\lib\stm32\common\gpio_common_f0234.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3850" topLine="68" />
-		</Cursor>
-	</File>
-	<File name="lib\libopencm3\include\libopencm3\stm32\f4\timer.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="991" topLine="4" />
-		</Cursor>
-	</File>
-	<File name="lib\libopencm3\lib\usb\usb_standard.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="162" topLine="231" />
-		</Cursor>
-	</File>
-	<File name="src\primitives\llist.c" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1199" topLine="0" />
+			<Cursor1 position="177" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

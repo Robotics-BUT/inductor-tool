@@ -18,12 +18,14 @@
 #include "usb_vilem.h"
 #include "usb_vilem.c"
 #include "dac.h"
+#include "protokol.h"
 
 
-uint8_t usbd_control_buffer[1024];
+struct Param_Mer Parametry;
+uint8_t usbd_control_buffer[64];
+uint16_t nas_koef=1;
 static uint8_t rbuf[1024];
 static uint8_t tbuf[1024];
-//unsigned char zesileni=1;
 FILE *us2;
 usbd_device *usbd_dev;
 volatile bool run = false;
@@ -49,19 +51,19 @@ void inicializace()
 
     us2 = fopenserial(1, 115200, tbuf,1024,rbuf,1024); // novy soubor pro uart
 
+
+
     leds_init();  //inicializace let
     pwm_init();    //inicializace pwm
     current_init(); //inicializace AD prevodniku
     dac_init(); //inicializace DAC
+    init_protokol(); //inicializace protokolu
 }
 
 void adc_finish(uint16_t values[])
 {
     if (!run)
         return;
-
-    //fwrite(&zesileni,1,1,us2);
-    //usbd_ep_write_packet(usbd_dev, 0x82, &zesileni, 1);
 
     char zn[8];
     zn[0]=pwm[3];
@@ -73,23 +75,23 @@ void adc_finish(uint16_t values[])
     zn[6]=values[2];
     zn[7]=values[2]/256;
 
-    fwrite(&pwm[3],1,2,us2);
+    /*fwrite(&pwm[3],1,2,us2);
     fwrite(&values[0],1,2,us2);
     fwrite(&values[1],1,2,us2);
-    fwrite(&values[2],1,2,us2);
+    fwrite(&values[2],1,2,us2);*/
 
-    //usbd_ep_write_packet(usbd_dev, 0x82, &a, 2);
-    //usbd_ep_write_packet(usbd_dev, 0x82, &b, 2);
-    //usbd_ep_write_packet(usbd_dev, 0x82, &c, 2);
-    //usbd_ep_write_packet(usbd_dev, 0x82, &d, 2);
-    //usbd_ep_write_packet(usbd_dev, 0x82, (void*)&znak2, 1);
     usbd_ep_write_packet(usbd_dev, 0x82, &zn, 8);
 
     // increment TIM5/OC4
-    pwm[3] = (pwm[3] + 1) & 0xFFF;
+    pwm[3] = (pwm[3] + nas_koef) & (0xFFF*nas_koef);
 
     if (pwm[3] == 0)
+    {
         run = false;
+        if(Parametry.set_param==1)
+            set_mer();
+    }
+
 
     timer_set_oc_value(TIM5, TIM_OC4, pwm[3]);
 }
@@ -110,7 +112,7 @@ int main(void)
     {
 		for (int i = 0; i < 100000000; i++)	/* Wait a bit. */
 		{
-		    __asm__("nop");
+		    //__asm__("nop");
 		    usbd_poll(usbd_dev); //obsluha USB
 		}
 

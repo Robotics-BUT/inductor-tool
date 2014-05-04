@@ -105,12 +105,12 @@ clean:
 
 %.flash: %.elf
 	@$(PRINTF) "  GDB     $< (flash)\n"
-	$(Q)$(GDB) --batch -ex 'target extended-remote COM3' \
+	$(Q)$(GDB) --batch -ex 'target extended-remote COM4' \
 		   -x $(OPENCM3_DIR)scripts/black_magic_probe_flash.scr $<
 
 %.gdb: %.elf
 	@$(PRINTF) "  GDB     $< (gdb)\n"
-	$(Q)$(GDB) -ex 'target extended-remote COM3' \
+	$(Q)$(GDB) -ex 'target extended-remote COM4' \
 		   -x $(OPENCM3_DIR)scripts/black_magic_probe_flash.scr $<
 
 ###############################################################################

@@ -6,6 +6,7 @@
 #include "pwm.h"
 
 uint32_t pwm[4] = { 0x4FF, 0x2FF, 0x7FF, 1};
+extern uint16_t nas_koef;
 
 void pwm_init(void)
 {
@@ -21,7 +22,7 @@ void pwm_init(void)
 	timer_reset(TIM5); //hlavni citac
     timer_set_mode(TIM5, TIM_CR1_CKD_CK_INT, TIM_CR1_CMS_EDGE, TIM_CR1_DIR_UP);
     timer_set_prescaler(TIM5, 1);   // 20.5kHz
-    timer_set_period(TIM5, 0xFFF); //cita do fff nastaveni periody citani
+    timer_set_period(TIM5, 0xFFF*nas_koef); //cita do fff nastaveni periody citani
     timer_set_counter(TIM5, 0);
     timer_set_repetition_counter(TIM5, 0);
     timer_continuous_mode(TIM5);

@@ -53,6 +53,9 @@
 		<Unit filename="include/leds.h" />
 		<Unit filename="include/primitives/llist.h" />
 		<Unit filename="include/primitives/ringbuf.h" />
+		<Unit filename="include/protokol.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="include/pwm.h" />
 		<Unit filename="include/serial.h" />
 		<Unit filename="include/usb_vilem.h" />
@@ -893,6 +896,9 @@
 		<Unit filename="src/primitives/ringbuf.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/protokol.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/pwm.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -907,10 +913,10 @@
 			<envvars />
 			<debugger>
 				<remote_debugging target="Debug">
-					<options conn_type="2" serial_port="COM3" serial_baud="115200" ip_address="localhost" ip_port="3333" additional_cmds="monitor connect_srst enable&#x0A;monitor swdp_scan&#x0A;attach 1&#x0A;load&#x0A;b main&#x0A;run" extended_remote="1" />
+					<options conn_type="2" serial_port="COM4" serial_baud="115200" ip_address="localhost" ip_port="3333" additional_cmds="monitor connect_srst enable&#x0A;monitor swdp_scan&#x0A;attach 1&#x0A;load&#x0A;b main&#x0A;run" extended_remote="1" />
 				</remote_debugging>
 				<remote_debugging target="Release">
-					<options conn_type="2" serial_port="COM3" serial_baud="115200" ip_address="localhost" ip_port="3333" additional_cmds="monitor swdp_scan&#x0A;attach 1&#x0A;load&#x0A;run" extended_remote="1" />
+					<options conn_type="2" serial_port="COM4" serial_baud="115200" ip_address="localhost" ip_port="3333" additional_cmds="monitor swdp_scan&#x0A;attach 1&#x0A;load&#x0A;run" extended_remote="1" />
 				</remote_debugging>
 			</debugger>
 			<lib_finder disable_auto="1" />
