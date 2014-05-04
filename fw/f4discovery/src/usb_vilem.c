@@ -5,6 +5,7 @@
 #include <libopencm3/usb/cdc.h>
 #include <libopencm3/cm3/scb.h>
 #include "usb_vilem.h"
+#include "protokol.h"
 
 static int cdcacm_control_request(usbd_device *usbd_dev, struct usb_setup_data *req, uint8_t **buf,
         uint16_t *len, void (**complete)(usbd_device *usbd_dev, struct usb_setup_data *req))
@@ -44,11 +45,14 @@ static void cdcacm_data_rx_cb(usbd_device *usbd_dev, uint8_t ep)
     char buf[64];
     int len = usbd_ep_read_packet(usbd_dev, 0x01, buf, 64);
 
-    if (len) {
-        while (usbd_ep_write_packet(usbd_dev, 0x82, buf, len) == 0)
-            ;
-    }
 
+
+  /*  if (len)
+    {
+        while (usbd_ep_write_packet(usbd_dev, 0x82, buf, len) == 0);
+    }*/
+
+    protokol(buf);
     gpio_toggle(GPIOC, GPIO5);
 }
 
