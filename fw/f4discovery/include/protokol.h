@@ -6,6 +6,7 @@
 #include <libopencm3/stm32/timer.h>
 
 #include "pwm.h"
+#include "dac.h"
 
 struct Param_Mer
 {
