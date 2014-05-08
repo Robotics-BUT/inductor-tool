@@ -37,16 +37,18 @@ void protokol(char *buf) //0 pro pøepsat  nastaveni, 1 pro spustit a 2 pro pøeps
 
 void set_mer(void) //prenese parametry ze struktury do promenych, a podle hodnoty ve strukture spusti enbo enspusti mereni
 {
+    set_napeti(Parametry.Napeti);
     nas_koef=Parametry.Cas_Nas;
     pwm[0]=Parametry.Cas_Nas*Parametry.default_pwm[0];
     pwm[1]=Parametry.Cas_Nas*Parametry.default_pwm[1];
     pwm[2]=Parametry.Cas_Nas*Parametry.default_pwm[2];
     pwm_init();
-    run=true;
+    if(Parametry.start_mer==1)
+        run=true;
 
 }
 
-void init_protokol(void)
+void init_protokol(void) // dopsat DAC
 {
     Parametry.set_param=0; //vynulovani struktury na nastaveni parametru mereni
     Parametry.Napeti=0;

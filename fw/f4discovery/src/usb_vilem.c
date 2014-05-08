@@ -52,7 +52,8 @@ static void cdcacm_data_rx_cb(usbd_device *usbd_dev, uint8_t ep)
         while (usbd_ep_write_packet(usbd_dev, 0x82, buf, len) == 0);
     }*/
 
-    protokol(buf);
+    if(len==9)
+        protokol(buf);
     gpio_toggle(GPIOC, GPIO5);
 }
 

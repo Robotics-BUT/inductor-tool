@@ -100,7 +100,7 @@ void usa_rxb(uint8_t ch)
 {
     (void)ch;
     pwm[3] = 1;
-    timer_set_oc_value(TIM5, TIM_OC4, pwm[3]);
+    timer_set_oc_value(TIM5, TIM_OC4, pwm[0]);
     run = true;
 }
 
