@@ -189,8 +189,8 @@ static const struct usb_config_descriptor config =
 
 static const char *usb_strings[] =
 {
-    "Black Sphere Technologies",
-    "CDC-ACM Vilem",
+    "VUT - BROB projekt",
+    "Inductor-tester",
     "DEMO",
 };
 

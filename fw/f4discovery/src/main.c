@@ -21,9 +21,9 @@
 #include "protokol.h"
 
 
-struct Param_Mer Parametry;
-uint8_t usbd_control_buffer[64];
-uint16_t nas_koef=1;
+struct Param_Mer Parametry;  //struktura do tkere se ulozi parametry mereni
+uint8_t usbd_control_buffer[64]; //bufer pro usb
+uint16_t nas_koef=1; //nasobici koeficient pro pripadne delsi mereni
 static uint8_t rbuf[1024];
 static uint8_t tbuf[1024];
 FILE *us2;
@@ -51,12 +51,10 @@ void inicializace()
 
     us2 = fopenserial(1, 115200, tbuf,1024,rbuf,1024); // novy soubor pro uart
 
-
-
-    leds_init();  //inicializace let
-    pwm_init();    //inicializace pwm
-    current_init(); //inicializace AD prevodniku
-    dac_init(); //inicializace DAC
+    leds_init();     //inicializace let
+    pwm_init();      //inicializace pwm
+    current_init();  //inicializace AD prevodniku
+    dac_init();      //inicializace DAC
     init_protokol(); //inicializace protokolu
 }
 
@@ -65,17 +63,19 @@ void adc_finish(uint16_t values[])
     if (!run)
         return;
 
+    uint32_t pom=pwm[3]/nas_koef;
+
     char zn[8];
-    zn[0]=pwm[3];
-    zn[1]=pwm[3]/256;
+    zn[0]=pom;
+    zn[1]=pom/256;
     zn[2]=values[0];
     zn[3]=values[0]/256;
     zn[4]=values[1];
     zn[5]=values[1]/256;
-    zn[6]=values[2];
-    zn[7]=values[2]/256;
+    zn[6]=values[3];
+    zn[7]=values[3]/256;
 
-    /*fwrite(&pwm[3],1,2,us2);
+    /*fwrite(&pwm[3],1,2,us2); //bylo zruseno, rpotoze debuger si stezoval, ze arm se pokusil pristoupit nekam do pameti akm nemel
     fwrite(&values[0],1,2,us2);
     fwrite(&values[1],1,2,us2);
     fwrite(&values[2],1,2,us2);*/
@@ -85,14 +85,12 @@ void adc_finish(uint16_t values[])
     // increment TIM5/OC4
     pwm[3] = (pwm[3] + nas_koef) & (0xFFF*nas_koef);
 
-    if (pwm[3] == 0)
+    if (pwm[3] == 0) //zmereny vsechny hodnoty?
     {
-        run = false;
-        if(Parametry.set_param==1)
-            set_mer();
+        run = false; //zastav mereni
+        if(Parametry.set_param==1) //pokud prisel pokyn zmenit nastaveny parametry
+            set_mer(); //zmen je
     }
-
-
     timer_set_oc_value(TIM5, TIM_OC4, pwm[3]);
 }
 
@@ -110,17 +108,32 @@ int main(void)
 
 	while (1)
     {
-		for (int i = 0; i < 100000000; i++)	/* Wait a bit. */
+		//for (int i = 0; i < 100000000; i++)	/* Wait a bit. */
 		{
 		    //__asm__("nop");
 		    usbd_poll(usbd_dev); //obsluha USB
 		}
 
-        LED_TGL(LED0);
+        if(run==true)
+        {
+           LED_ON(LED0);
+        }
+        else
+       {
+           LED_OFF(LED0);
+       }
 
-        pwm[3] = 1;
-        timer_set_oc_value(TIM5, TIM_OC4, pwm[3]);
-        run = true;
+       /* gpio_mode_setup(GPIOA, GPIO_MODE_INPUT, GPIO_PUPD_NONE, GPIO0);
+		if ((GPIOA_IDR & (1 << 0)) != 0)
+        {
+
+           pwm[3]=1;
+           run=true;
+        }*/ //pouze pokus dkyz byl tento fw testovan se starsim programem
+
+        //pwm[3] = 1;
+        //timer_set_oc_value(TIM5, TIM_OC4, pwm[3]);
+        //run = true;
 	}
 
 	return 0;
