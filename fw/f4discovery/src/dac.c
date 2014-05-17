@@ -18,7 +18,6 @@ void set_napeti(uint16_t napeti)
     napeti*=(0xFFF/(15));
     dac_load_data_buffer_single(napeti, RIGHT12, CHANNEL_1);//do kanalu 1 DAC nahrat hodnotu (j)
 	dac_software_trigger(CHANNEL_1); //pustit hodnotu ven
-
 }
 
 /* takhle se pak nastavi hodnota do DAC
