@@ -6,6 +6,7 @@
 #include "pwm.h"
 
 uint32_t pwm[4] = { 0x4FF, 0x2FF, 0x7FF, 1};
+extern uint16_t nas_koef;
 
 void pwm_init(void)
 {
@@ -18,10 +19,10 @@ void pwm_init(void)
 
 	gpio_set_output_options(GPIOA, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ,  GPIO0 | GPIO1 | GPIO2 | GPIO3);
 
-	timer_reset(TIM5);
+	timer_reset(TIM5); //hlavni citac
     timer_set_mode(TIM5, TIM_CR1_CKD_CK_INT, TIM_CR1_CMS_EDGE, TIM_CR1_DIR_UP);
     timer_set_prescaler(TIM5, 1);   // 20.5kHz
-    timer_set_period(TIM5, 0xFFF);
+    timer_set_period(TIM5, 0xFFF*nas_koef); //cita do fff nastaveni periody citani
     timer_set_counter(TIM5, 0);
     timer_set_repetition_counter(TIM5, 0);
     timer_continuous_mode(TIM5);
@@ -48,7 +49,7 @@ void pwm_init(void)
 
     /* -- OC3 and OC2N configuration -- */
 
-	timer_disable_oc_output(TIM5, TIM_OC3);
+	timer_disable_oc_output(TIM5, TIM_OC3); // synchronizace na osciloskop
     timer_enable_oc_preload(TIM5, TIM_OC3);
     timer_set_oc_mode(TIM5, TIM_OC3, TIM_OCM_PWM1);
 	timer_set_oc_polarity_high(TIM5, TIM_OC3);
@@ -58,7 +59,7 @@ void pwm_init(void)
 
     /* -- OC4 and OC2N configuration -- */
 
-	timer_disable_oc_output(TIM5, TIM_OC4);
+	timer_disable_oc_output(TIM5, TIM_OC4); // venku nikam nepripojovat
     timer_enable_oc_preload(TIM5, TIM_OC4);
     timer_set_oc_mode(TIM5, TIM_OC4, TIM_OCM_PWM1);
 	timer_set_oc_polarity_high(TIM5, TIM_OC4);
